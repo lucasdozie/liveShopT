@@ -5,11 +5,9 @@ I use the following tool and library, which are: express, moongos(mongodb), wins
 rename env.development file to just .env to access the environment variable
 
 ## Features
-Project Setup
-Added services and dataRepository
-TypeScript v4
-Testing with Jest
-Local development with Nodemon
+ - Project Setup and Structure
+ - Added services and dataRepository
+ - TypeScript v4
 
 ## Scripts
 ```yarn run start:dev```
@@ -26,13 +24,13 @@ Runs the jest tests once. however no test case was written
 
 ## Setup
 
- ```POST /inventory ```
+ ```POST api/v1/inventory ```
     the request body is an Object instead of an Array from the example
 
- ```POST /show/:show_id/buy_item/:item_id ```
+ ```POST api/v1/show/:show_id/buy_item/:item_id ```
     the request body is an Object instead of an Array from the example
 
- ```GET /show/:show_id/sold_items/:item_id ```
+ ```GET api/v1/show/:show_id/sold_items/:item_id ```
     the request body is an Object instead of an Array from the example
 
 note: I had the changes some meta keys to maintain a certain naming style.
