@@ -1,0 +1,40 @@
+{
+  "name": "liveShop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "dozielucas",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-status": "^1.5.0",
+    "mongoose": "^6.0.13",
+    "morgan": "^1.10.0",
+    "winston": "^3.3.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "scripts": {
+    "start2": "node src/index",
+    "start": "npm run build && node build/index.js",
+    "build": "rimraf ./build && tsc -p tsconfig.json",
+    "test": " jest --watchAll --verbose",
+    "start:dev": "nodemon"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "dotenv": "^10.0.0",
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
+}
