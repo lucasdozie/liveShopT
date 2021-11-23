@@ -10,8 +10,6 @@ rename env.development file to just .env to access the environment variable
  - TypeScript v4
 
 ## Scripts
-```yarn run start:dev```
-Starts the application in development using nodemon and ts-node to do hot reloading.
 
 ```yarn run start```
 Starts the app in production by first building the project with yarn run build, and then executing the compiled JavaScript at build/index.js.
@@ -33,4 +31,4 @@ Runs the jest tests once. however no test case was written
  ```GET api/v1/show/:show_id/sold_items/:item_id ```
     the request body is an Object instead of an Array from the example
 
-note: I had the changes some meta keys to maintain a certain naming style.
+note: I had to change some meta keys to maintain a certain naming style.

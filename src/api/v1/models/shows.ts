@@ -5,14 +5,16 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const showSchema = new Schema({
-  user: { type: Schema.Types.ObjectId, ref: "User"},
+  admin: { type: Schema.Types.ObjectId, ref: "Admin"},
   name: {
     type: String,
+    required: true,
     minlength: 3,
     maxlength: 50
   },
-  description: { type: String },
-
+  adminId: { type: String},
+  description: { type: String, required: true },
+  products: {type: Array, required: true}, //can be Items or Inventory e.g {item_id, itemName, quantity}// item on display for this show
   location: {
     latitude: { type: Number },
     longitude: { type: Number }
@@ -24,7 +26,8 @@ const showSchema = new Schema({
     country: { type: String }
   },
 
-  suspended: { type: Boolean, default: false },
+
+  user: [{ type: Schema.Types.ObjectId, ref: "User"}], //Optional for audience that interacted with this show
 
   deleted: { type: Boolean, default: false },
   meta: {

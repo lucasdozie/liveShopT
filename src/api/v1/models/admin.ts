@@ -4,8 +4,8 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-//Buying/Audience/user model
-const userSchema = new Schema({
+//Creator model
+const adminSchema = new Schema({
   first_name: {
     type: String,
     minlength: 3,
@@ -59,14 +59,13 @@ const userSchema = new Schema({
     updated_at: { type: Date, default: Date.now }
   },
 });
-//userSchema.index({first_name: "text", last_name: "text" },{ collation: { locale: 'en', strength: 2 } }); // schema level
 
-var User = mongoose.model("User", userSchema);
-User.createIndexes(function(err) {
+var Admin = mongoose.model("Admin", adminSchema);
+Admin.createIndexes(function(err) {
   if (err) console.log("Error: ", err);
 });
 
 /******************
  * Export schema  *
  ******************/
-module.exports = User;
+module.exports = Admin;
