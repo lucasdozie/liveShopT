@@ -23,12 +23,16 @@ Runs the jest tests once. however no test case was written
 ## Setup
 
  ```POST api/v1/inventory ```
-    the request body is an Object instead of an Array from the example
+    the request body is an Object instead of an Array from the example, It creates the Items/product
 
  ```POST api/v1/show/:show_id/buy_item/:item_id ```
-    the request body is an Object instead of an Array from the example
+    Initiate a record in the transaction collection(additional model) with show and itemId
 
  ```GET api/v1/show/:show_id/sold_items/:item_id ```
-    the request body is an Object instead of an Array from the example
+    returns the item/product/inventory(s) for a particular show
+
+### additional routes
+ ```POST api/v1/show/create ```
+   the request is use to initiate a new show and the product/item/inventory listing
 
 note: I had to change some meta keys to maintain a certain naming style.

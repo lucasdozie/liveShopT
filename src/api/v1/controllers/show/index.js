@@ -36,14 +36,28 @@ const intiateManyShow = async (req, res, next) => {
     return res.status(200).json(foundData)
 }
 
-const getSoldItemPerShow = async (req, res, next) => {
+
+
+const getOneItemSoldPerShow = async (req, res, next) => {
     //@todo 
     //
-    const {} = req.query
+    const {show_id, item_id} = req.params
 
     console.log(req.params," : intiateInventory INVENTORY CONTROL : ",req.query)
-    const newParams = Object.assign({}, {})
-    const foundData = await ShowServices.insertMany(req.body, {ordered: true})
+    const newQuery = Object.assign({}, {
+        show: show_id,
+        inventory: item_id
+    })
+    const foundData = await TransactionServices.getOne(newQuery)
+
+    return res.status(200).json(foundData)
+}
+const getAllItemSoldPerShow = async (req, res, next) => {
+    const {show_id} = req.params
+    const newQuery = Object.assign({}, {
+        show: show_id
+    })
+    const foundData = await TransactionServices.getAll(newQuery, {ordered: true})
 
     return res.status(200).json(foundData)
 }
@@ -89,7 +103,8 @@ const buyItemPerShow = async (req, res, next) => {
 module.exports = {
     getAllShow,
     intiateShow,
-    getSoldItemPerShow,
+    getAllItemSoldPerShow,
+    getOneItemSoldPerShow,
     buyItemPerShow,
     intiateManyShow
 }
